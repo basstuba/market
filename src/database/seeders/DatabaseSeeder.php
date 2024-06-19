@@ -3,6 +3,11 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+use App\Models\Comment;
+use App\Models\Profile;
+use App\Models\Like;
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +18,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call(UsersTableSeeder::class);
+        $this->call(ConditionsTableSeeder::class);
+        $this->call(CategoriesTableSeeder::class);
+        $this->call(ItemsTableSeeder::class);
+        User::factory(10)->create();
     }
 }

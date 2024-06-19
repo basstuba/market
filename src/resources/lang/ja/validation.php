@@ -34,7 +34,7 @@ return [
     'date_equals'          => ':attributeは:dateに等しい日付でなければなりません。',
     'date_format'          => ":attributeの形式は、':format'と合いません。",
     'different'            => ':attributeと:otherには、異なるものを指定してください。',
-    'digits'               => ':attributeは、:digits桁にしてください。',
+    'digits'               => ':attributeは:digits桁の数字を入力してください',
     'digits_between'       => ':attributeは、:min桁から:max桁にしてください。',
     'dimensions'           => ':attributeの画像サイズが無効です',
     'distinct'             => ':attributeの値が重複しています。',
@@ -58,7 +58,7 @@ return [
     'image'                => ':attributeには、画像を指定してください。',
     'in'                   => '選択された:attributeは、有効ではありません。',
     'in_array'             => ':attributeが:otherに存在しません。',
-    'integer'              => ':attributeには、整数を指定してください。',
+    'integer'              => ':attributeは整数を入力してください',
     'ip'                   => ':attributeには、有効なIPアドレスを指定してください。',
     'ipv4'                 => ':attributeはIPv4アドレスを指定してください。',
     'ipv6'                 => ':attributeはIPv6アドレスを指定してください。',
@@ -78,7 +78,7 @@ return [
     'max'                  => [
         'numeric' => ':attributeには、:max以下の数字を指定してください。',
         'file'    => ':attributeには、:max KB以下のファイルを指定してください。',
-        'string'  => ':attributeは、:max文字以下にしてください。',
+        'string'  => ':attributeは:max文字以下にしてください',
         'array'   => ':attributeの項目は、:max個以下にしてください。',
     ],
     'mimes'                => ':attributeには、:valuesタイプのファイルを指定してください。',
@@ -95,8 +95,8 @@ return [
     'numeric'              => ':attributeには、数字を指定してください。',
     'password'             => 'パスワードが正しくありません。',
     'present'              => ':attributeが存在している必要があります。',
-    'regex'                => ':attributeには、有効な正規表現を指定してください。',
-    'required'             => ':attributeは、必ず指定してください。',
+    'regex'                => ':attributeは数字を入力してください',
+    'required'             => ':attributeを入力してください',
     'required_if'          => ':otherが:valueの場合、:attributeを指定してください。',
     'required_unless'      => ':otherが:values以外の場合、:attributeを指定してください。',
     'required_with'        => ':valuesが指定されている場合、:attributeも指定してください。',
@@ -130,8 +130,21 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'postcode' => [
+            'regex' => '数字を入力してください',
+            'digits' => '7桁の数字を入力してください',
+        ],
+
+        'img_url' => [
+            'required' => '画像を選択してください',
+        ],
+
+        'condition' => [
+            'required' => '商品の状態を選択してください',
+        ],
+
+        'category' => [
+            'required' => 'カテゴリーを選択してください',
         ],
     ],
 
@@ -146,5 +159,16 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name' => 'お名前',
+        'postcode' => '郵便番号',
+        'address' => '住所',
+        'comment' => 'コメント',
+        'item_name' => '商品名',
+        'explanation' => '商品の説明',
+        'price' => '販売価格',
+        'img_url' => '商品画像',
+        'condition' => '商品の状態',
+        'category' => 'カテゴリー',
+    ],
 ];
