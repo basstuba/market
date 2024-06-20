@@ -14,7 +14,11 @@ class ProfileFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'user_id' => $this->faker->unique()->numberBetween(2,11),
+            'postcode' => $this->faker->postcode(),
+            'address' => $this->faker->streetAddress(),
+            'building' => $this->faker->secondaryAddress(),
+            'img_url' => 'storage/image/user_icon.png',
         ];
     }
 }
