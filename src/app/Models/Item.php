@@ -43,4 +43,12 @@ class Item extends Model
     public function categoryItems() {
         return $this->belongsToMany('App\Models\Category');
     }
+
+    public static function recommendItem() {
+        return Item::withCount('likes')->orderBy('likes_count', 'desc')->take(10)->get();
+    }
+
+    public function myListItem($user) {
+        return Item::where('user_id', $user['id'])->get();
+    }
 }

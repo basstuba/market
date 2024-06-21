@@ -10,38 +10,42 @@
     @yield('css')
 </head>
 <body class="body">
-    <header>
-        <div>
-            <a href="">
-                <img src="" alt="">
+    <header class="header">
+        <div class="header-title">
+            <a class="header-title__link" href="{{ route('index') }}">
+                <img class="header-title__logo" src="{{ asset('storage/image/logo.svg') }}" alt="社名ロゴ"/>
             </a>
         </div>
-        <div>
-            <form action="">
-                <input type="text">
+        <div class="header-search">
+            <form class="header-form" action="/search" method="get">
+                <input class="header-search__input" type="text" name="keyword" placeholder="なにをお探しですか？"
+                value="{{ old('keyword') }}" onchange="submit()">
             </form>
         </div>
         @if(Auth::check())
-        <nav>
-            <div>
-                <a href=""></a>
+        <nav class="header-nav">
+            <div class="nav-item">
+                <form class="form-logout" action="/logout" method="post">
+                    @csrf
+                    <button class="logout-button">ログアウト</button>
+                </form>
             </div>
-            <div>
-                <a href=""></a>
+            <div class="nav-item">
+                <a class="nav-item__link" href="{{ route('myPage') }}">マイページ</a>
             </div>
-            <div>
-                <a href=""></a>
+            <div class="nav-sell">
+                <a class="nav-sell__button" href="{{ route('sell') }}">出品</a>
             </div>
         </nav>
         @else
-        <nav>
-            <div>
-                <a href=""></a>
+        <nav class="header-nav">
+            <div class="nav-item">
+                <a class="nav-item__link" href="{{ route('linkLogin') }}">ログイン</a>
             </div>
-            <div>
-                <a href=""></a>
+            <div class="nav-item">
+                <a class="nav-item__link" href="{{ route('linkRegister') }}">会員登録</a>
             </div>
-            <div>出品</div>
+            <div class="nav-sell__dummy">出品</div>
         </nav>
         @endif
     </header>

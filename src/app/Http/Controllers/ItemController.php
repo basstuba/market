@@ -17,6 +17,25 @@ use App\Models\User;
 class ItemController extends Controller
 {
     public function test() {
-        return view('layouts.app');
+        return view('index');
+    }//テスト用//
+
+    public function index() {
+        $items = session()->has('items') ? session('items') : Item::recommendItem();
+
+        return view('index', compact('items'));
+    }
+
+    public function viewChange(Request $request) {
+        $user = Auth::user();
+
+        if(has($request->myList)) {
+            $myList = new Item();
+            $items = $myList->myListItem($user);
+
+            return redirect('/')->with('items', $items);
+        }else{
+            return redirect('/');
+        }
     }
 }
