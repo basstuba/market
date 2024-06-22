@@ -11,14 +11,14 @@
             <div class="select-item">
                 <label class="item-title">
                     <input class="item-check" type="checkbox" name="recommend" onchange="submit()" checked>
-                    おすすめ
+                    <span class="item-text">おすすめ</span>
                 </label>
             </div>
             @if(Auth::check())
             <div class="select-item">
                 <label class="item-title">
                     <input class="item-check" type="checkbox" name="myList" onchange="submit()">
-                    マイリスト
+                    <span class="item-text">マイリスト</span>
                 </label>
             </div>
             @else
@@ -30,9 +30,10 @@
         @foreach($items as $item)
         <div class="item-img">
             <a class="item-link" href="{{ route('detail', ['item' => $item['id']]) }}">
-                <img class="item-photo" src="{{ $item['img_url'] }}" alt="商品画像">
+                <img class="item-photo" src="{{ asset($item->img_url) }}" alt="商品画像">
             </a>
         </div>
         @endforeach
     </div>
 </div>
+@endsection

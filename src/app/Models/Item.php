@@ -40,8 +40,8 @@ class Item extends Model
         return $this->hasMany('App\Models\SoldItem');
     }
 
-    public function categoryItems() {
-        return $this->belongsToMany('App\Models\Category');
+    public function categories() {
+        return $this->belongsToMany('App\Models\Category', 'category_items');
     }
 
     public static function recommendItem() {

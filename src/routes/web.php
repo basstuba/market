@@ -36,8 +36,8 @@ Route::prefix('link')->group(function() {
 
 Route::middleware('auth')->group(function() {
     Route::prefix('like')->group(function() {
-        Route::post('/create/{item}', [LikeController::class, 'likeCreate']);
-        Route::delete('/delete/{item}', [LikeController::class, 'likeDelete']);
+        Route::post('/create', [LikeController::class, 'likeCreate']);
+        Route::delete('/delete', [LikeController::class, 'likeDelete']);
     });
 
     Route::prefix('comment')->group(function() {

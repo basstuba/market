@@ -17,7 +17,7 @@ use App\Models\User;
 class ItemController extends Controller
 {
     public function test() {
-        return view('index');
+        return view('');
     }//テスト用//
 
     public function index() {
@@ -37,5 +37,13 @@ class ItemController extends Controller
         }else{
             return redirect('/');
         }
+    }
+
+    public function detail($itemId) {
+        $item = Item::with(['condition', 'likes', 'comments', 'categories'])->withCount(['likes', 'comments'])->find($itemId);
+        $user = Auth::check() ? Auth::user() : [ 'id' => 0 ];
+        $like = $item['likes']->where('user_id', $user['id'])->first();
+
+        return view('item', compact('item', 'like'));
     }
 }
