@@ -33,7 +33,7 @@
                 &emsp;
             </div>
             <div class="item-button">
-                <button class="item-button__submit">ログインする</button>
+                <button class="item-button__submit" type="submit">ログインする</button>
             </div>
         </form>
     </div>

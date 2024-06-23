@@ -27,7 +27,7 @@
             <div class="nav-item">
                 <form class="form-logout" action="/logout" method="post">
                     @csrf
-                    <button class="logout-button">ログアウト</button>
+                    <button class="logout-button" type="submit">ログアウト</button>
                 </form>
             </div>
             <div class="nav-item">

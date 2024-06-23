@@ -16,10 +16,6 @@ use App\Models\User;
 
 class ItemController extends Controller
 {
-    public function test() {
-        return view('');
-    }//テスト用//
-
     public function index() {
         $items = session()->has('items') ? session('items') : Item::recommendItem();
 

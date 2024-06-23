@@ -34,7 +34,7 @@
                 &emsp;
             </div>
             <div class="item-button">
-                <button class="item-button__submit">登録する</button>
+                <button class="item-button__submit" type="submit">登録する</button>
             </div>
         </form>
     </div>

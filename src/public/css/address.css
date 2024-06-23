@@ -1,0 +1,46 @@
+.main {
+    text-align: center;
+}
+
+.main-title__logo {
+    font-size: xx-large;
+}
+
+.main-content {
+    width: 35%;
+    margin: 0 auto;
+}
+
+.form-item {
+    text-align: start;
+    margin-bottom: 2rem;
+}
+
+.item-name {
+    display: block;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.item-input {
+    width: 100%;
+    border-radius: 0.3rem;
+    border: 0.1rem solid #898989;
+    padding: 0.7rem 1rem;
+}
+
+.item-input:focus-visible {
+    outline: 0;
+}
+
+.form-button__submit {
+    width: 100%;
+    background-color: #fd3b3b;
+    color: #fff;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: large;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-top: 3rem;
+}

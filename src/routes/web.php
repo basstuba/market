@@ -41,7 +41,7 @@ Route::middleware('auth')->group(function() {
     });
 
     Route::prefix('comment')->group(function() {
-        Route::get('/', [CommentController::class, 'comment'])->name('comment');
+        Route::get('/{item}', [CommentController::class, 'comment'])->name('comment');
         Route::post('/create', [CommentController::class, 'commentCreate']);
         Route::delete('/delete', [CommentController::class, 'commentDelete']);
     });
@@ -60,10 +60,10 @@ Route::middleware('auth')->group(function() {
         Route::get('/', [UserController::class, 'profile'])->name('profile');
         Route::post('/update', [UserController::class, 'profileUpdate']);
     });
-    Route::post('/address/update', [UserController::class, 'addressUpdate']);
+    Route::prefix('address')->group(function() {
+        Route::get('/', [UserController::class, 'address'])->name('address');
+        Route::post('/update', [UserController::class, 'addressUpdate']);
+    });
 });
-
-//view確認用//
-Route::get('/test', [ItemController::class, 'test']);
 
 
