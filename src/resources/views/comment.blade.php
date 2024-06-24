@@ -46,41 +46,57 @@
                 </div>
             </div>
         </div>
-        <div>
-            @foreach($item->comments as $comment)
-                @if($comment['user_id'] == $user['id'])
-                <div>
-                    <div></div>
-                    <div>
-                        <img src="" alt="">
+        <div class="comment-detail">
+            @foreach($commentUsers as $commentUser)
+                @if($commentUser['user_id'] == $user['id'])
+                <div class="comment-item">
+                    <div class="my-user">
+                        <div class="user-name">
+                            {{ $commentUser['user']['name'] }}
+                        </div>
+                        <div class="user-photo">
+                            <img class="photo-img" src="{{ asset($commentUser['user']['profile']['img_url']) }}" alt="ユーザーアイコン">
+                        </div>
                     </div>
-                    <div></div>
-                    <div>
-                        <form action="">
-                            <input type="text">
-                            <button></button>
+                    <div class="user-comment">
+                        {{ $commentUser['comment'] }}
+                    </div>
+                    <div class="comment-delete">
+                        <form class="delete-form" action="/comment/delete" method="post">
+                            @method('delete')
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $commentUser['id'] }}">
+                            <button class="delete-button">コメント削除</button>
                         </form>
                     </div>
                 </div>
                 @else
-                <div>
-                    <div>
-                        <img src="" alt="">
+                <div class="comment-item">
+                    <div class="user">
+                        <div class="user-photo">
+                            <img class="photo-img" src="{{ asset($commentUser['user']['profile']['img_url']) }}" alt="ユーザーアイコン">
+                        </div>
+                        <div class="user-name">
+                            {{ $commentUser['user']['name'] }}
+                        </div>
                     </div>
-                    <div></div>
-                    <div></div>
+                    <div class="user-comment">
+                        {{ $commentUser['comment'] }}
+                    </div>
                 </div>
                 @endif
             @endforeach
         </div>
-        <div>
-            <form action="">
-                <div>
-                    <label for=""></label>
-                    <textarea name="" id=""></textarea>
+        <div class="comment-form">
+            <form class="text-form" action="/comment/create" method="post">
+                @csrf
+                <div class="comment-text">
+                    <label class="text-title">商品へのコメント</label>
+                    <textarea class="textarea" name="comment" cols="50" rows="5"></textarea>
                 </div>
-                <div>
-                    <button></button>
+                <div class="comment-button">
+                    <input type="hidden" name="item_id" value="$item['id']">
+                    <button class="comment-button__submit">コメントを送信する</button>
                 </div>
             </form>
         </div>
