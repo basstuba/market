@@ -57,7 +57,7 @@ Route::middleware('auth')->group(function() {
     Route::get('/user', [UserController::class, 'myPage'])->name('myPage');
     Route::get('/list/change', [UserController::class, 'listChange']);
     Route::prefix('profile')->group(function() {
-        Route::get('/', [UserController::class, 'profile'])->name('profile');
+        Route::get('/{user}', [UserController::class, 'profile'])->name('profile');
         Route::post('/update', [UserController::class, 'profileUpdate']);
     });
     Route::prefix('address')->group(function() {

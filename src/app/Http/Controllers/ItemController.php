@@ -26,8 +26,7 @@ class ItemController extends Controller
         $user = Auth::user();
 
         if(has($request->myList)) {
-            $myList = new Item();
-            $items = $myList->myListItem($user);
+            $items = Like::with('item')->where('user_id', $user['id'])->get();
 
             return redirect('/')->with('items', $items);
         }else{

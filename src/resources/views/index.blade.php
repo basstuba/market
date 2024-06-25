@@ -7,7 +7,7 @@
 @section('content')
 <div class="main">
     <div class="main-select">
-        <form class="select-form" action="">
+        <form class="select-form" action="/view/change" method="get">
             <div class="select-item">
                 <label class="item-title">
                     <input class="item-check" type="checkbox" name="recommend" onchange="submit()" checked>
