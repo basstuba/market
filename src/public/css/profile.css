@@ -33,6 +33,7 @@
     font-size: larger;
     font-weight: bold;
     padding: 0.3rem 1rem;
+    cursor: pointer;
 }
 
 .upload-input {
@@ -50,6 +51,11 @@
     border: 0.1rem solid #898989;
     border-radius: 0.3rem;
     padding: 0.5rem;
+    cursor: pointer;
+}
+
+.item-input:focus-visible {
+    outline: 0;
 }
 
 .button-submit {
@@ -63,4 +69,8 @@
     padding: 0.5rem;
     margin: 2rem 0 0;
     cursor: pointer;
+}
+
+.form-item__error {
+    color: #fd3b3b;
 }

@@ -1,0 +1,94 @@
+.main {
+    text-align: center;
+}
+
+.main-content {
+    width: 35%;
+    text-align: start;
+    margin: 0 auto 2rem;
+}
+
+.input-title {
+    font-weight: bold;
+}
+
+.upload-space {
+    border: 0.1rem dashed #898989;
+    border-radius: 0.3rem;
+    text-align: center;
+    padding: 3rem;
+}
+
+.upload-button {
+    color: #fd3b3b;
+    border: 0.1rem solid #fd3b3b;
+    border-radius: 0.3rem;
+    font-weight: bold;
+    padding: 0.3rem 1rem;
+    cursor: pointer;
+}
+
+.upload-input {
+    display: none;
+}
+
+.content-title__logo {
+    font-size: larger;
+    color: #898989;
+    border-bottom: 0.1rem solid #bababa;
+}
+
+.select-title,
+.text-title,
+.explanation-title {
+    font-weight: bold;
+    display: block;
+}
+
+.select,
+.text,
+.explanation {
+    width: 100%;
+    font-size: large;
+    border: 0.1rem solid #bababa;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.item-price {
+    border: 0.1rem solid #bababa;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+}
+
+.price {
+    border: none;
+    width: 95%;
+    font-size: large;
+    cursor: pointer;
+}
+
+.select:focus-visible,
+.text:focus-visible,
+.explanation:focus-visible,
+.price:focus-visible {
+    outline: 0;
+}
+
+.form-button__submit {
+    width: 100%;
+    background-color: #fd3b3b;
+    color: #fff;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: large;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin: 2rem 0 0;
+    cursor: pointer;
+}
+
+.form-item__error {
+    color: #fd3b3b;
+}

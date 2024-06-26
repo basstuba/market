@@ -45,3 +45,7 @@
     padding: 0.5rem;
     margin-top: 3rem;
 }
+
+.form-item__error {
+    color: #fd3b3b;
+}

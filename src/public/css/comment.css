@@ -123,3 +123,7 @@
     margin: 1rem 0 3rem;
     cursor: pointer;
 }
+
+.form-item__error {
+    color: #fd3b3b;
+}

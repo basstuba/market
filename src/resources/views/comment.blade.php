@@ -94,6 +94,12 @@
                     <label class="text-title">商品へのコメント</label>
                     <textarea class="textarea" name="comment" cols="50" rows="5"></textarea>
                 </div>
+                <div class="form-item__error">
+                @error('comment')
+                {{ $message }}
+                @enderror
+                &emsp;
+            </div>
                 <div class="comment-button">
                     <input type="hidden" name="item_id" value="$item['id']">
                     <button class="comment-button__submit">コメントを送信する</button>

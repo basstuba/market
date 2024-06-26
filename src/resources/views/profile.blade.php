@@ -19,7 +19,7 @@
                 </div>
                 <div class="user-upload">
                     <label class="upload-button" for="upload">画像を選択する</label>
-                    <input class="upload-input" id="upload" type="file" name="img_url" onchange="submit()">
+                    <input class="upload-input" id="upload" type="file" name="userImage">
                 </div>
             </div>
             <div class="content-item">
