@@ -20,16 +20,20 @@
         </div>
     </div>
     <div class="main-select">
-        <form class="select-form" action="/list/change" method="get">
+        <form class="select-form" action="/user" method="get">
             <div class="select-item">
                 <label class="item-title">
-                    <input class="item-check" type="checkbox" name="sellItem" onchange="submit()" checked>
+                    <input class="item-check" type="checkbox" name="sellItem"
+                    onchange="submit()" {{ $change === 'sellItem' ? 'checked' : '' }}>
                     <span class="item-text">出品した商品</span>
                 </label>
             </div>
+        </form>
+        <form class="select-form" action="/list/change" method="get">
             <div class="select-item">
                 <label class="item-title">
-                    <input class="item-check" type="checkbox" name="soldItem" onchange="submit()">
+                    <input class="item-check" type="checkbox" name="soldItem"
+                    onchange="submit()" {{ $change === 'soldItem' ? 'checked' : '' }}>
                     <span class="item-text">購入した商品</span>
                 </label>
             </div>

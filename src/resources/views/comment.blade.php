@@ -23,12 +23,15 @@
                 <form class="like-form__delete" action="/like/delete" method="post">
                     @method('delete')
                     @csrf
+                    <input type="hidden" name="comment">
+                    <input type="hidden" name="like_id" value="{{ $like['id'] }}">
                     <input type="hidden" name="item_id" value="{{ $item['id'] }}">
                     <input class="like-color" type="image" src="{{ asset('storage/image/like_color.png') }}" alt="お気に入りを外す">
                 </form>
                 @else
                 <form class="like-form__create" action="/like/create" method="post">
                     @csrf
+                    <input type="hidden" name="comment">
                     <input type="hidden" name="item_id" value="{{ $item['id'] }}">
                     <input class="like-white" type="image" src="{{ asset('storage/image/like_white.png') }}" alt="お気に入り">
                 </form>
@@ -55,7 +58,8 @@
                             {{ $commentUser['user']['name'] }}
                         </div>
                         <div class="user-photo">
-                            <img class="photo-img" src="{{ asset($commentUser['user']['profile']['img_url']) }}" alt="ユーザーアイコン">
+                            <img class="photo-img"
+                            src="{{ asset($commentUser['user']['profile']['img_url'] ?? 'storage/image/user_icon.png') }}" alt="ユーザーアイコン">
                         </div>
                     </div>
                     <div class="user-comment">
@@ -66,6 +70,7 @@
                             @method('delete')
                             @csrf
                             <input type="hidden" name="id" value="{{ $commentUser['id'] }}">
+                            <input type="hidden" name="item_id" value="{{ $item['id'] }}">
                             <button class="delete-button">コメント削除</button>
                         </form>
                     </div>
@@ -74,7 +79,8 @@
                 <div class="comment-item">
                     <div class="user">
                         <div class="user-photo">
-                            <img class="photo-img" src="{{ asset($commentUser['user']['profile']['img_url']) }}" alt="ユーザーアイコン">
+                            <img class="photo-img"
+                            src="{{ asset($commentUser['user']['profile']['img_url'] ?? 'storage/image/user_icon.png') }}" alt="ユーザーアイコン">
                         </div>
                         <div class="user-name">
                             {{ $commentUser['user']['name'] }}
@@ -99,9 +105,9 @@
                 {{ $message }}
                 @enderror
                 &emsp;
-            </div>
+                </div>
                 <div class="comment-button">
-                    <input type="hidden" name="item_id" value="$item['id']">
+                    <input type="hidden" name="item_id" value="{{ $item['id'] }}">
                     <button class="comment-button__submit">コメントを送信する</button>
                 </div>
             </form>

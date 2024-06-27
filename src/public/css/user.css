@@ -45,9 +45,6 @@
 
 .main-select {
     border-bottom: 0.1rem solid #898989;
-}
-
-.select-form {
     display: flex;
     justify-content: flex-start;
     align-items: center;

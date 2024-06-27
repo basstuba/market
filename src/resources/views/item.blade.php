@@ -23,6 +23,7 @@
                 <form class="like-form__delete" action="/like/delete" method="post">
                     @method('delete')
                     @csrf
+                    <input type="hidden" name="like_id" value="{{ $like['id'] }}">
                     <input type="hidden" name="item_id" value="{{ $item['id'] }}">
                     <input class="like-color" type="image" src="{{ asset('storage/image/like_color.png') }}" alt="お気に入りを外す">
                 </form>

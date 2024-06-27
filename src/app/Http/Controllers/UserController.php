@@ -16,20 +16,21 @@ class UserController extends Controller
         $profile = Profile::where('user_id', $user['id'])->first();
 
         $items = session()->has('items') ? session('items') : Item::where('user_id', $user['id'])->get();
+        $change = session()->has('change') ? session('change') : 'sellItem';
 
-        return view('user', compact('user', 'profile', 'items'));
+        return view('user', compact('user', 'profile', 'items','change'));
     }
 
-    public function listChange(Request $request) {
+    public function listChange() {
         $user = Auth::user();
 
-        if(has($request->soldItem)) {
-            $items = SoldItem::with('item')->where('user_id', $user['id'])->get();
+        $items = SoldItem::where('user_id', $user['id'])->with('item')->get()->pluck('item');
+        $change = 'soldItem';
 
-            return redirect('/')->with('items', $items);
-        }else{
-            return redirect('/');
-        }
+        return redirect('/user')->with([
+            'items' => $items,
+            'change' => $change
+        ]);
     }
 
     public function profile($userId) {

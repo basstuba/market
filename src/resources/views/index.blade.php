@@ -7,24 +7,28 @@
 @section('content')
 <div class="main">
     <div class="main-select">
-        <form class="select-form" action="/view/change" method="get">
+        <form class="select-form" action="/" method="get">
             <div class="select-item">
                 <label class="item-title">
-                    <input class="item-check" type="checkbox" name="recommend" onchange="submit()" checked>
+                    <input class="item-check" type="checkbox" name="recommend"
+                    onchange="submit()" {{ $change === 'recommend' ? 'checked' : '' }}>
                     <span class="item-text">おすすめ</span>
                 </label>
             </div>
-            @if(Auth::check())
+        </form>
+        @if(Auth::check())
+        <form class="select-form" action="/view/change" method="get">
             <div class="select-item">
                 <label class="item-title">
-                    <input class="item-check" type="checkbox" name="myList" onchange="submit()">
+                    <input class="item-check" type="checkbox" name="myList"
+                    onchange="submit()" {{ $change === 'myList' ? 'checked' : '' }}>
                     <span class="item-text">マイリスト</span>
                 </label>
             </div>
-            @else
-            <div class="select-item__dummy">マイリスト</div>
-            @endif
         </form>
+        @else
+        <div class="select-item__dummy">マイリスト</div>
+        @endif
     </div>
     <div class="main-content">
         @foreach($items as $item)

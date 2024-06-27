@@ -12,7 +12,7 @@ class Comment extends Model
     protected $guarded = ['id'];
 
     protected $fillable = [
-        'user-id',
+        'user_id',
         'item_id',
         'comment',
     ];

@@ -47,4 +47,10 @@ class Item extends Model
     public static function recommendItem() {
         return Item::withCount('likes')->orderBy('likes_count', 'desc')->take(10)->get();
     }
+
+    public function scopeKeywordSearch($query, $keyword) {
+        if(!empty($keyword)) {
+            $query->where('name', 'like', '%' . $keyword . '%');
+        }
+    }
 }

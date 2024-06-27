@@ -14,7 +14,6 @@
             <div class="item-photo">
                 <div class="input-title">商品画像</div>
                 <div class="upload-space">
-                    <label class="upload-button" for="upload">画像を選択する</label>
                     <input class="upload-input" id="upload" type="file" name="itemImage">
                 </div>
             </div>
@@ -29,8 +28,8 @@
             </div>
             <div class="item-select">
                 <label class="select-title">カテゴリー</label>
-                <select class="select" name="category_id">
-                    <option value="" hidden>選択してください（複数選択可）</option>
+                <select class="select" name="category_id[]" multiple size="4">
+                    <option value="">選択してください（複数選択可）</option>
                     @foreach($categories as $category)
                     <option value="{{ $category['id'] }}"
                     {{ old('category_id') == $category['id'] ? 'selected' : ''}}>

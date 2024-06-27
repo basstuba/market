@@ -87,12 +87,16 @@
     width: 100%;
 }
 
+.delete-form {
+    text-align: end;
+}
+
 .delete-button {
-    background-color: #fd3b3b;
-    color: #fff;
-    border: none;
+    background-color: #fff;
+    border: 0.1rem solid #d6d5d5;
     border-radius: 0.3rem;
     padding: 0.2rem 0.5rem;
+    cursor: pointer;
 }
 
 .text-title {

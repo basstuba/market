@@ -18,7 +18,6 @@
                     src="{{asset(old('img_url') ?? $profile['profile']['img_url'] ?? 'storage/image/user_icon.png')}}" alt="ユーザーアイコン">
                 </div>
                 <div class="user-upload">
-                    <label class="upload-button" for="upload">画像を選択する</label>
                     <input class="upload-input" id="upload" type="file" name="userImage">
                 </div>
             </div>

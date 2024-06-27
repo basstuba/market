@@ -18,20 +18,21 @@ class ItemController extends Controller
 {
     public function index() {
         $items = session()->has('items') ? session('items') : Item::recommendItem();
+        $change = session()->has('change') ? session('change') : 'recommend';
 
-        return view('index', compact('items'));
+        return view('index', compact('items', 'change'));
     }
 
-    public function viewChange(Request $request) {
+    public function viewChange() {
         $user = Auth::user();
 
-        if(has($request->myList)) {
-            $items = Like::with('item')->where('user_id', $user['id'])->get();
+        $items = Like::where('user_id', $user['id'])->with('item')->get()->pluck('item');
+        $change = 'myList';
 
-            return redirect('/')->with('items', $items);
-        }else{
-            return redirect('/');
-        }
+        return redirect('/')->with([
+            'items' => $items,
+            'change' => $change
+        ]);
     }
 
     public function detail($itemId) {
@@ -40,5 +41,17 @@ class ItemController extends Controller
         $like = $item['likes']->where('user_id', $user['id'])->first();
 
         return view('item', compact('item', 'like'));
+    }
+
+    public function search(Request $request) {
+        $items = Item::with(['categories' => function($query) use ($request) {
+            $query->CategoriesSearch($request->keyword);
+        }])->KeywordSearch($request->keyword)->get();
+        $change = 'search';
+
+        return redirect('/')->with([
+            'items' => $items,
+            'change' => $change
+        ]);
     }
 }

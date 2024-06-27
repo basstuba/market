@@ -12,7 +12,7 @@ class Profile extends Model
     protected $guarded = ['id'];
 
     protected $fillable = [
-        'user-id',
+        'user_id',
         'postcode',
         'address',
         'building',
