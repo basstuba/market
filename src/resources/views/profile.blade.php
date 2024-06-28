@@ -9,13 +9,16 @@
     <div class="main-title">
         <h2 class="main-title__logo">プロフィール設定</h2>
     </div>
+    <div class="message">
+        {{ session('message') ?? '' }}&emsp;
+    </div>
     <div class="main-content">
         <form class="content-form" action="/profile/update" method="post" enctype="multipart/form-data">
             @csrf
             <div class="upload">
                 <div class="user-photo">
                     <img class="photo-img"
-                    src="{{asset(old('img_url') ?? $profile['profile']['img_url'] ?? 'storage/image/user_icon.png')}}" alt="ユーザーアイコン">
+                    src="{{asset($profile['profile']['img_url'] ?? 'storage/image/user_icon.png')}}" alt="ユーザーアイコン">
                 </div>
                 <div class="user-upload">
                     <input class="upload-input" id="upload" type="file" name="userImage">
@@ -57,7 +60,6 @@
             </div>
             <div class="content-button">
                 <input type="hidden" name="user_id" value="{{ $profile['id'] }}">
-                <input type="hidden" name="profile_id" value="{{ $profile['profile']['id'] ?? '' }}">
                 <button class="button-submit" type="submit">更新する</button>
             </div>
         </form>

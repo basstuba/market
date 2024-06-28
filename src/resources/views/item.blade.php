@@ -5,6 +5,9 @@
 @endsection
 
 @section('content')
+<div class="message">
+    {{ session('message') ?? '' }}&emsp;
+</div>
 <div class="main">
     <div class="item-photo">
         <img class="item-img" src="{{ asset($item->img_url) }}" alt="商品画像">

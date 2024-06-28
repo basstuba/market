@@ -1,11 +1,19 @@
 .main-title__logo {
     text-align: center;
+    margin: 1rem 0 0;
+}
+
+.message {
+    font-size: x-large;
+    font-weight: bold;
+    color: #ffc400;
+    text-align: center;
 }
 
 .main-content {
     width: 35%;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 0 2rem;
 }
 
 .upload {

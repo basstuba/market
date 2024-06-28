@@ -1,7 +1,13 @@
+.message {
+    font-size: x-large;
+    font-weight: bold;
+    color: #ffc400;
+    text-align: center;
+}
+
 .main {
     display: flex;
     justify-content: center;
-    padding: 3rem;
 }
 
 .content-item {

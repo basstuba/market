@@ -5,6 +5,9 @@
 @endsection
 
 @section('content')
+<div class="message">
+    {{ session('message') ?? '' }}&emsp;
+</div>
 <div class="main">
     <div class="main-content">
         <div class="content-item">
@@ -29,7 +32,7 @@
         <div class="delivery">
             <div class="delivery-name">配送先</div>
             <div class="delivery-link">
-                <a class="delivery-link__button" href="{{ route('address') }}">変更する</a>
+                <a class="delivery-link__button" href="{{ route('address', ['item' => $item['id']]) }}">変更する</a>
             </div>
         </div>
     </div>
@@ -55,7 +58,7 @@
                 </div>
             </div>
             <div class="sell-button">
-                <input type="hidden" name="item_id" value="$item['id']">
+                <input type="hidden" name="item_id" value="{{ $item['id'] }}">
                 <button class="sell-button__submit" type="submit">購入する</button>
             </div>
         </form>

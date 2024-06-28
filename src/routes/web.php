@@ -61,7 +61,7 @@ Route::middleware('auth')->group(function() {
         Route::post('/update', [UserController::class, 'profileUpdate']);
     });
     Route::prefix('address')->group(function() {
-        Route::get('/', [UserController::class, 'address'])->name('address');
+        Route::get('/{item}', [UserController::class, 'address'])->name('address');
         Route::post('/update', [UserController::class, 'addressUpdate']);
     });
 });
