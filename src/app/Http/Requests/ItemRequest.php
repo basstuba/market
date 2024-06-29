@@ -27,9 +27,9 @@ class ItemRequest extends FormRequest
             'item_name' => 'required',
             'explanation' => 'required|max:250',
             'price' => 'required|integer',
-            'img_url' => 'required',
-            'condition' => 'required',
-            'category' => 'required',
+            'itemImage' => 'required',
+            'condition_id' => 'required',
+            'category_id' => 'required',
         ];
     }
 
@@ -41,9 +41,9 @@ class ItemRequest extends FormRequest
             'explanation . max' => '商品の説明は250文字以下にしてください',
             'price . required' => '販売価格を入力してください',
             'price . integer' => '販売価格は整数を入力してください',
-            'img_url . required' => '商品画像を選択してください',
-            'condition . required' => '商品の状態を選択してください',
-            'category . required' => 'カテゴリーを選択してください',
+            'itemImage . required' => '商品画像を選択してください',
+            'condition_id . required' => '商品の状態を選択してください',
+            'category_id . required' => 'カテゴリーを選択してください',
         ];
     }
 }

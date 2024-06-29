@@ -12,9 +12,9 @@ class Item extends Model
     protected $guarded = ['id'];
 
     protected $fillable = [
-        'user-id',
+        'user_id',
         'condition_id',
-        'name',
+        'item_name',
         'explanation',
         'price',
         'img_url',
@@ -50,7 +50,7 @@ class Item extends Model
 
     public function scopeKeywordSearch($query, $keyword) {
         if(!empty($keyword)) {
-            $query->where('name', 'like', '%' . $keyword . '%');
+            $query->where('item_name', 'like', '%' . $keyword . '%');
         }
     }
 }

@@ -14,7 +14,7 @@
     </div>
     <div class="item-detail">
         <h2 class="item-name">
-            {{ $item['name'] }}
+            {{ $item['item_name'] }}
         </h2>
         <div class="item-brand">COACHTECH</div>
         <div class="item-price">

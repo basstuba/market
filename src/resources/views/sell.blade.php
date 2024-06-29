@@ -11,6 +11,7 @@
     </div>
     <div class="main-content">
         <form class="content-form" action="/sell/create" method="post" enctype="multipart/form-data">
+            @csrf
             <div class="item-photo">
                 <div class="input-title">商品画像</div>
                 <div class="upload-space">
@@ -32,14 +33,14 @@
                     <option value="">選択してください（複数選択可）</option>
                     @foreach($categories as $category)
                     <option value="{{ $category['id'] }}"
-                    {{ old('category_id') == $category['id'] ? 'selected' : ''}}>
+                    {{ in_array($category['id'], old('category_id', [])) ? 'selected' : ''}}>
                         {{ $category['category'] }}
                     </option>
                     @endforeach
                 </select>
             </div>
             <div class="form-item__error">
-                @error('category')
+                @error('category_id')
                 {{ $message }}
                 @enderror
                 &emsp;
@@ -57,7 +58,7 @@
                 </select>
             </div>
             <div class="form-item__error">
-                @error('condition')
+                @error('condition_id')
                 {{ $message }}
                 @enderror
                 &emsp;
@@ -67,10 +68,10 @@
             </div>
             <div class="item-text">
                 <label class="text-title">商品名</label>
-                <input class="text" type="text" name="name" value="{{ old('name') }}">
+                <input class="text" type="text" name="item_name" value="{{ old('item_name') }}">
             </div>
             <div class="form-item__error">
-                @error('name')
+                @error('item_name')
                 {{ $message }}
                 @enderror
                 &emsp;

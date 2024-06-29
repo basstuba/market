@@ -48,6 +48,16 @@ class UserController extends Controller
         $userProfile = Profile::where('user_id', $request->user_id)->first();
         $profile = $request->only('postcode', 'address', 'building');
 
+        if(!empty($request->userImage)) {
+        $dir = 'image';
+        $fileName = $request->file('userImage')->getClientOriginalName();
+        $request->file('userImage')->storeAs('public/' . $dir, $fileName);
+
+        $profile['img_url'] = 'storage/' . $dir . '/' . $fileName;
+        }else{
+            $profile['img_url'] = null;
+        }
+
         if($userProfile === null) {
             $profile['user_id'] = $request->user_id;
             Profile::create($profile);

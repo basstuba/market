@@ -16,7 +16,7 @@
             </div>
             <div class="item-detail">
                 <div class="item-name">
-                    {{ $item['name'] }}
+                    {{ $item['item_name'] }}
                 </div>
                 <div class="item-price">
                     {{ '¥' . number_format($item['price']) }}

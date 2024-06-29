@@ -77,14 +77,12 @@
     margin: 0 1rem;
 }
 
-.user-photo {
-    width: 5%;
-    background-color: #d6d5d5;
-    border-radius: 1rem;
-}
-
 .photo-img {
-    width: 100%;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #d6d5d5;
+    object-fit: cover;
+    border-radius: 1rem;
 }
 
 .delete-form {

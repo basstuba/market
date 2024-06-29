@@ -135,15 +135,15 @@ return [
             'digits' => '7桁の数字を入力してください',
         ],
 
-        'img_url' => [
+        'itemImage' => [
             'required' => '画像を選択してください',
         ],
 
-        'condition' => [
+        'condition_id' => [
             'required' => '商品の状態を選択してください',
         ],
 
-        'category' => [
+        'category_id' => [
             'required' => 'カテゴリーを選択してください',
         ],
     ],
@@ -161,14 +161,16 @@ return [
 
     'attributes' => [
         'name' => 'お名前',
+        'email' => 'メールアドレス',
+        'password' => 'パスワード',
         'postcode' => '郵便番号',
         'address' => '住所',
         'comment' => 'コメント',
         'item_name' => '商品名',
         'explanation' => '商品の説明',
         'price' => '販売価格',
-        'img_url' => '商品画像',
-        'condition' => '商品の状態',
-        'category' => 'カテゴリー',
+        'itemImage' => '商品画像',
+        'condition_id' => '商品の状態',
+        'category_id' => 'カテゴリー',
     ],
 ];

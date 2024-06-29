@@ -29,6 +29,9 @@
         @else
         <div class="select-item__dummy">マイリスト</div>
         @endif
+        <div class="message">
+            {{ session('message') ?? '' }}&emsp;
+        </div>
     </div>
     <div class="main-content">
         @foreach($items as $item)

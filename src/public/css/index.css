@@ -31,6 +31,13 @@
     margin: 2rem 1rem 1rem 5.5rem;
 }
 
+.message {
+    font-size: x-large;
+    font-weight: bold;
+    color: #ffc400;
+    margin-left: 19rem;
+}
+
 .main-content {
     display: flex;
     justify-content: center;
