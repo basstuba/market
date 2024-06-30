@@ -37,9 +37,12 @@ class ItemController extends Controller
     }
 
     public function search(Request $request) {
-        $items = Item::with(['categories' => function($query) use ($request) {
-            $query->CategoriesSearch($request->keyword);
-        }])->KeywordSearch($request->keyword)->get();
+        $keyword = $request->keyword;
+
+        $nameItems = Item::KeywordSearch($keyword)->get();
+        $categoryItems = Item::CategorySearch($keyword)->get();
+
+        $items = $categoryItems->merge($nameItems)->unique('id');
         $change = 'search';
 
         return redirect('/')->with([

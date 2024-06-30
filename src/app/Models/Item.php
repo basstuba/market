@@ -53,4 +53,12 @@ class Item extends Model
             $query->where('item_name', 'like', '%' . $keyword . '%');
         }
     }
+
+    public function scopeCategorySearch($query, $keyword) {
+        if(!empty($keyword)) {
+            $query->whereHas('categories', function($query) use ($keyword) {
+                $query->where('category', 'like', '%' . $keyword . '%');
+            });
+        }
+    }
 }

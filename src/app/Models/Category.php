@@ -18,10 +18,4 @@ class Category extends Model
     public function items() {
         return $this->belongsToMany('App\Models\Item', 'category_items');
     }
-
-    public function scopeCategoriesSearch($query, $keyword) {
-        if(!empty($keyword)) {
-            $query->where('category', 'like', '%' . $keyword . '%');
-        }
-    }
 }

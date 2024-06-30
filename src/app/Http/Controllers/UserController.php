@@ -71,8 +71,10 @@ class UserController extends Controller
 
     public function address($itemId) {
         $item = $itemId;
+        $user = Auth::User();
+        $profile = Profile::where('user_id', $user->id)->first();
 
-        return view('address', compact('item'));
+        return view('address', compact('item', 'profile'));
     }
 
     public function addressUpdate(AddressRequest $request) {

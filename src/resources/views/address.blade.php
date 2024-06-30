@@ -14,7 +14,7 @@
             @csrf
             <div class="form-item">
                 <label class="item-name">郵便番号</label>
-                <input class="item-input" type="text" name="postcode" value="{{ old('postcode') }}">
+                <input class="item-input" type="text" name="postcode" value="{{ old('postcode') ?? $profile['postcode'] ?? '' }}">
             </div>
             <div class="form-item__error">
                 @error('postcode')
@@ -24,7 +24,7 @@
             </div>
             <div class="form-item">
                 <label class="item-name">住所</label>
-                <input class="item-input" type="text" name="address" value="{{ old('address') }}">
+                <input class="item-input" type="text" name="address" value="{{ old('address') ?? $profile['address'] ?? '' }}">
             </div>
             <div class="form-item__error">
                 @error('address')
@@ -34,7 +34,7 @@
             </div>
             <div class="form-item">
                 <label class="item-name">建物名</label>
-                <input class="item-input" type="text" name="building" value="{{ old('building') }}">
+                <input class="item-input" type="text" name="building" value="{{ old('building') ?? $profile['building'] ?? '' }}">
             </div>
             <div class="form-button">
                 <input type="hidden" name="item_id" value="{{ $item }}">
