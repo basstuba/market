@@ -146,6 +146,10 @@ return [
         'category_id' => [
             'required' => 'カテゴリーを選択してください',
         ],
+
+        'pay' => [
+            'required' => '支払い方法を選択してください',
+        ],
     ],
 
     /*
@@ -172,5 +176,6 @@ return [
         'itemImage' => '商品画像',
         'condition_id' => '商品の状態',
         'category_id' => 'カテゴリー',
+        'pay' => '支払い方法',
     ],
 ];

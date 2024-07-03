@@ -47,6 +47,7 @@ Route::middleware('auth')->group(function() {
     });
 
     Route::get('/buy/{item}', [BuyController::class, 'buy'])->name('buy');
+    Route::get('/payment/redirect', [BuyController::class, 'paymentRedirect']);
     Route::post('/payment', [BuyController::class, 'payment']);
 
     Route::prefix('sell')->group(function() {
