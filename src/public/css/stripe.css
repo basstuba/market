@@ -1,0 +1,23 @@
+.stripe-content {
+    width: 70%;
+    margin: 3rem auto;
+}
+
+.stripe-button {
+    width: 100%;
+    color: #fff;
+    background-color: #0570de;
+    border: 0.1rem solid #0570de;
+    border-radius: 0.3rem;
+    font-size: larger;
+    font-weight: bold;
+    padding: 0.3rem;
+    margin-top: 2rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.stripe-error {
+    color: #e00000;
+    text-align: center;
+}

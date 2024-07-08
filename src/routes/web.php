@@ -49,6 +49,7 @@ Route::middleware('auth')->group(function() {
     Route::get('/buy/{item}', [BuyController::class, 'buy'])->name('buy');
     Route::get('/payment/redirect', [BuyController::class, 'paymentRedirect']);
     Route::post('/payment', [BuyController::class, 'payment']);
+    Route::get('/stripe/success', [BuyController::class, 'stripeSuccess'])->name('stripeSuccess');
 
     Route::prefix('sell')->group(function() {
         Route::get('/', [SellController::class, 'sell'])->name('sell');
