@@ -1,0 +1,19 @@
+.main {
+    text-align: center;
+    padding-top: 5rem;
+}
+
+.main-item {
+    margin-top: 3rem;
+}
+
+.main-item__link {
+    color: #ffa500;
+    text-decoration: none;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.main-item__link:visited {
+    color: #ffa500;
+}

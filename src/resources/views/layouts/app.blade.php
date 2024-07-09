@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>market</title>
+    <title>Market</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}"/>
     @yield('css')
@@ -31,7 +31,11 @@
                 </form>
             </div>
             <div class="nav-item">
+                @if(Auth::user()->isAdmin())
+                <a class="nav-admin__link" href="{{ route('admin') }}">管理画面</a>
+                @else
                 <a class="nav-item__link" href="{{ route('myPage') }}">マイページ</a>
+                @endif
             </div>
             <div class="nav-sell">
                 <a class="nav-sell__button" href="{{ route('sell') }}">出品</a>

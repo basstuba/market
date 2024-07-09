@@ -62,4 +62,8 @@ class User extends Authenticatable
     public function soldItems() {
         return $this->hasMany('App\Models\SoldItem');
     }
+
+    public function isAdmin() {
+        return $this->role === 'admin';
+    }
 }

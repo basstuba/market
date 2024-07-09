@@ -46,6 +46,16 @@
     color: #fff;
 }
 
+.nav-admin__link {
+    color: #ffff00;
+    text-decoration: none;
+    font-size: large;
+}
+
+.nav-admin__link:visited {
+    color: #ffff00;
+}
+
 .nav-sell__button {
     background-color: #fff;
     color: #000;

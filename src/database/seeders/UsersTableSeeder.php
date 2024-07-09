@@ -19,6 +19,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'COACHTECH',
             'email' => 'coachtech@coachtech.com',
             'password' => Hash::make('coachtech'),
+            'role' => 'admin',
             'remember_token' => ''
         ];
         DB::table('users')->insert($param);

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BuyController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ItemController;
@@ -65,6 +66,14 @@ Route::middleware('auth')->group(function() {
     Route::prefix('address')->group(function() {
         Route::get('/{item}', [UserController::class, 'address'])->name('address');
         Route::post('/update', [UserController::class, 'addressUpdate']);
+    });
+    //管理画面用。案件シート未入力//
+    Route::prefix('admin')->group(function() {
+        Route::get('/', function() {
+            return view('admin.index');
+        })->name('admin');
+        Route::get('/user', [AdminController::class, 'adminUser'])->name('adminUser');
+        Route::get('/item', [AdminController::class. 'adminItem'])->name('adminItem');
     });
 });
 
