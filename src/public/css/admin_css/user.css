@@ -1,0 +1,81 @@
+.main {
+    text-align: center;
+}
+
+.main-title__logo {
+    margin: 1rem 0;
+}
+
+.search-input {
+    width: 30%;
+    font-size: large;
+    border: 0.1rem solid #898989;
+    border-radius: 0.3rem;
+    padding: 0.3rem;
+}
+
+.content-table {
+    margin: 1rem auto;
+    text-align: start;
+}
+
+.content-tr {
+    border-bottom: 0.1rem solid #cdcdcd;
+}
+
+.content-th {
+    text-align: start;
+    font-size: large;
+    padding: 0.2rem 0.5rem;
+}
+
+.content-td {
+    padding: 0.2rem 0.5rem;
+}
+
+.button-open__submit {
+    color: #fff;
+    background-color: #ffbd39;
+    border: 0.1rem solid #ffbd39;
+    border-radius: 0.3rem;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+}
+
+.modal-main {
+    border: #cdcdcd;
+    border-radius: 0.3rem;
+    box-shadow: 0.2rem 0.2rem 0.4rem #898989;
+    padding: 1rem 2rem;
+    text-align: start;
+}
+
+.item-name {
+    color: #ffaa00;
+    margin-top: 1rem;
+}
+
+.modal-item {
+    font-size: x-large;
+}
+
+.modal-button__close {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.button-close__submit {
+    width: 70%;
+    color: #fff;
+    background-color: #ffbd39;
+    border: 0.1rem solid #ffbd39;
+    border-radius: 0.3rem;
+    font-size: large;
+    padding: 0.3rem;
+    cursor: pointer;
+}
+
+.link-mail {
+    color: #ffaa00;
+    text-decoration: none;
+}
