@@ -15,6 +15,9 @@
             value="{{ old('keyword') }}" onchange="submit()">
         </form>
     </div>
+    <div class="message">
+        {{ session('message') ?? '' }}&emsp;
+    </div>
     <div class="main-content">
         <table class="content-table">
             <tr class="content-tr">

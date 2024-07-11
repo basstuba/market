@@ -73,10 +73,13 @@ Route::middleware('auth')->group(function() {
             return view('admin.index');
         })->name('admin');
         Route::get('/user', [AdminController::class, 'adminUser'])->name('adminUser');
-        Route::get('/item', [AdminController::class, 'adminItem'])->name('adminItem');
         Route::get('/search', [AdminController::class, 'adminSearch']);
         Route::get('/mail/{user}', [AdminController::class, 'adminMail'])->name('adminMail');
         Route::delete('/user/delete', [AdminController::class, 'adminUserDelete']);
+        Route::get('/item', [AdminController::class, 'adminItem'])->name('adminItem');
+        Route::get('/item/search', [AdminController::class, 'adminItemSearch']);
+        Route::get('/comment/{item}', [AdminController::class, 'adminComment'])->name('adminComment');
+        Route::delete('/comment/delete', [AdminController::class, 'adminCommentDelete']);
     });
 });
 

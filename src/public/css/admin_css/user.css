@@ -14,6 +14,12 @@
     padding: 0.3rem;
 }
 
+.message {
+    color: #ff6060;
+    font-size: larger;
+    font-weight: bold;
+}
+
 .content-table {
     margin: 1rem auto;
     text-align: start;
@@ -26,11 +32,11 @@
 .content-th {
     text-align: start;
     font-size: large;
-    padding: 0.2rem 0.5rem;
+    padding: 0.2rem 0.7rem;
 }
 
 .content-td {
-    padding: 0.2rem 0.5rem;
+    padding: 0.2rem 0.7rem;
 }
 
 .button-open__submit {
@@ -78,4 +84,13 @@
 .link-mail {
     color: #ffaa00;
     text-decoration: none;
+}
+
+.delete-button {
+    color: #fff;
+    background-color: #ff6060;
+    border: 0.1rem solid #ff6060;
+    border-radius: 0.3rem;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
 }
