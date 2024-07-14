@@ -1,11 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminCommentController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BuyController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\SellController;
 use App\Http\Controllers\UserController;
 
@@ -76,11 +78,14 @@ Route::middleware('auth')->group(function() {
         Route::get('/search', [AdminController::class, 'adminSearch']);
         Route::get('/mail/{user}', [AdminController::class, 'adminMail'])->name('adminMail');
         Route::delete('/user/delete', [AdminController::class, 'adminUserDelete']);
-        Route::get('/item', [AdminController::class, 'adminItem'])->name('adminItem');
-        Route::get('/item/search', [AdminController::class, 'adminItemSearch']);
-        Route::get('/comment/{item}', [AdminController::class, 'adminComment'])->name('adminComment');
-        Route::delete('/comment/delete', [AdminController::class, 'adminCommentDelete']);
+
+        Route::get('/item', [AdminCommentController::class, 'adminItem'])->name('adminItem');
+        Route::get('/item/search', [AdminCommentController::class, 'adminItemSearch']);
+        Route::get('/comment/{item}', [AdminCommentController::class, 'adminComment'])->name('adminComment');
+        Route::delete('/comment/delete', [AdminCommentController::class, 'adminCommentDelete']);
     });
+
+    Route::post('/mail', [MailController::class, 'send']);
 });
 
 

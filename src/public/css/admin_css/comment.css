@@ -1,0 +1,61 @@
+.main {
+    text-align: center;
+}
+
+.main-link {
+    text-align: end;
+    padding-right: 3rem;
+    margin-top: 0.5rem;
+}
+
+.main-link__back {
+    color: #ffaa00;
+    font-size: larger;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.main-link__back:visited {
+    color: #ffaa00;
+}
+
+.main-title__logo {
+    margin: 0;
+}
+
+.message {
+    color: #ff6060;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.main-content {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.content-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-user {
+    font-size: large;
+    font-weight: bold;
+}
+
+.delete-button {
+    color: #fff;
+    background-color: #ff6060;
+    border: 0.1rem solid #ff6060;
+    border-radius: 0.3rem;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+}
+
+.comment-text {
+    border-bottom: 0.1rem solid #cdcdcd;
+    text-align: start;
+    margin-bottom: 0.5rem;
+}

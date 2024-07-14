@@ -12,7 +12,9 @@
 <body class="body">
     <header class="header">
         <div class="header-title">
-            <h1 class="header-title__logo">Management Screen</h1>
+            <h1 class="header-title__logo">
+                <a class="header-title__link" href="{{ route('admin') }}">Management Screen</a>
+            </h1>
         </div>
         <nav class="header-nav">
             <div class="nav-item">

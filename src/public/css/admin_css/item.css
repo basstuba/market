@@ -1,0 +1,51 @@
+.main {
+    text-align: center;
+    padding-bottom: 3rem;
+}
+
+.main-title__logo {
+    margin: 1rem 0;
+}
+
+.search-form__input {
+    width: 30%;
+    font-size: large;
+    border: 0.1rem solid #898989;
+    border-radius: 0.3rem;
+    padding: 0.3rem;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.content-item {
+    width: 12%;
+    margin: 2rem 3rem 0;
+}
+
+.item-photo {
+    width: 100%;
+}
+
+.item-photo__img {
+    width: 100%;
+}
+
+.comment-confirm {
+    margin-top: 0.5rem;
+}
+
+.comment-confirm__link {
+    background-color: #ffaa00;
+    color: #fff;
+    border-radius: 0.3rem;
+    padding: 0.1rem 0.5rem;
+    text-decoration: none;
+}
+
+.comment-confirm__link:visited {
+    color: #fff;
+}

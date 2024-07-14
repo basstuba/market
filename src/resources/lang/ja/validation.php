@@ -177,5 +177,7 @@ return [
         'condition_id' => '商品の状態',
         'category_id' => 'カテゴリー',
         'pay' => '支払い方法',
+        'mail_title' => 'タイトル',
+        'mail_text' => 'メール本文',
     ],
 ];

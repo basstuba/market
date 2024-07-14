@@ -11,8 +11,16 @@
 }
 
 .header-title__logo {
-    color: #ffd175;
     margin: 0.5rem 0;
+}
+
+.header-title__link {
+    color: #ffd175;
+    text-decoration: none;
+}
+
+.header-title__link:visited {
+    color: #ffd175;
 }
 
 .header-nav {
