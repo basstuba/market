@@ -19,8 +19,8 @@ class AdminMail extends Mailable
     public function __construct($user, $mail)
     {
         $this->email = $user->email;
-        $this->title = $mail->mail_title;
-        $this->text = $mail->mail_text;
+        $this->title = $mail['mail_title'];
+        $this->text = $mail['mail_text'];
     }
 
     /**
@@ -31,7 +31,7 @@ class AdminMail extends Mailable
     public function build()
     {
         return $this->to($this->email)
-        ->subject($this->mail_title)
+        ->subject($this->title)
         ->view('admin.mail')
         ->with([
                 'text' => $this->text,

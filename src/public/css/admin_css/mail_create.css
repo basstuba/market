@@ -1,0 +1,69 @@
+.main-title__logo {
+    text-align: center;
+}
+
+.main-content {
+    width: 60%;
+    background-color: #f9f9f9;
+    border: 0.1rem solid #898989;
+    border-radius: 0.3rem;
+    margin: 0 auto;
+    padding: 2rem 5rem;
+}
+
+.address-th {
+    font-size: larger;
+    text-align: start;
+    padding: 0 2rem 1rem 0;
+}
+
+.address-td {
+    padding-bottom: 1rem;
+}
+
+.mail-title__logo,
+.mail-text__logo {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.mail-title__input {
+    width: 70%;
+    background-color: #f9f9f9;
+    border: none;
+    border-bottom: 0.1rem solid #898989;
+    font-size: larger;
+}
+
+.mail-title__input:focus-visible {
+    outline: 0;
+}
+
+.mail-text__textarea {
+    width: 100%;
+    border: 0.1rem solid #898989;
+    border-radius: 0.3rem;
+    padding: 1rem;
+}
+
+.mail-text__textarea:focus-visible {
+    outline: 0;
+}
+
+.mail-error {
+    color: #ff6060;
+    font-size: large;
+    font-weight: bold;
+}
+
+.form-button__submit {
+    width: 100%;
+    background-color: #ffbd39;
+    color: #fff;
+    font-size: large;
+    font-weight: bold;
+    border: 0.1rem solid #ffbd39;
+    border-radius: 0.3rem;
+    padding: 0.3rem;
+    cursor: pointer;
+}
