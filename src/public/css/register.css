@@ -58,3 +58,13 @@
 .main-link__button:visited {
     color: #006eff;
 }
+
+@media screen and (max-width: 768px) {
+    .form-item {
+        width: 50%;
+    }
+
+    .item-button__submit {
+        width: 50%;
+    }
+}

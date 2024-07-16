@@ -38,7 +38,7 @@
         </form>
     </div>
     <div class="main-link">
-        <a class="main-link__button" href="{{ route('linkLogin') }}">会員登録はこちら</a>
+        <a class="main-link__button" href="{{ route('linkRegister') }}">会員登録はこちら</a>
     </div>
 </div>
 @endsection

@@ -50,7 +50,7 @@
 }
 
 .like-count {
-    margin-left: 0.5rem;
+    margin: 0.1rem 0 0 0.5rem;
 }
 
 .comment-link__icon {
@@ -102,4 +102,99 @@
 
 .td-condition {
     padding: 0.1rem 1rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .item-detail {
+        width: 40%;
+        margin-left: 2rem;
+    }
+
+    .item-photo {
+        width: 25%;
+        margin-right: 2rem;
+    }
+
+    .like-color,
+    .like-white {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .item-detail {
+        width: 50%;
+        margin-left: 1rem;
+    }
+
+    .item-photo {
+        margin-right: 1rem;
+    }
+
+    .like-color,
+    .like-white {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .main {
+        flex-wrap: wrap;
+    }
+
+    .item-detail {
+        width: 80%;
+        margin-top: 1rem;
+    }
+
+    .item-photo {
+        width: 40%;
+        margin-top: 1rem;
+    }
+
+    .like-color,
+    .like-white {
+        width: 80%;
+    }
+
+    .comment {
+        margin-left: 1rem;
+    }
+
+    .information-th {
+        padding-right: 1rem;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .like-color,
+    .like-white {
+        width: 85%;
+    }
+
+    .information-th {
+        padding-right: 0.5rem;
+    }
+
+    .td-category {
+        padding: 0.1rem 0.5rem;
+        margin-right: 0.2rem;
+    }
+}
+
+@media screen and (max-width: 321px) {
+
+    .like-color,
+    .like-white {
+        width: 100%;
+    }
+
+    .information-th {
+        padding-right: 0.3rem;
+    }
+
+    .td-category {
+        padding: 0.1rem 0.3rem;
+        margin-right: 0.2rem;
+    }
 }

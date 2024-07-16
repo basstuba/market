@@ -69,7 +69,7 @@ Route::middleware('auth')->group(function() {
         Route::get('/{item}', [UserController::class, 'address'])->name('address');
         Route::post('/update', [UserController::class, 'addressUpdate']);
     });
-    //管理画面用。案件シート未入力//
+
     Route::prefix('admin')->group(function() {
         Route::get('/', function() {
             return view('admin.index');

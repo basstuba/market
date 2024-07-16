@@ -76,3 +76,58 @@
     padding: 0.3rem 1rem;
     font-size: large;
 }
+
+@media screen and (max-width: 1024px) {
+    .header-nav {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header-title {
+        width: 25%;
+    }
+
+    .header-title__logo {
+        width: 100%;
+    }
+
+    .header-search__input {
+        padding: 0.3rem 1rem;
+    }
+
+    .logout-button,
+    .nav-item__link,
+    .nav-admin__link,
+    .nav-sell__button {
+        font-size: smaller;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .header {
+        flex-wrap: wrap;
+    }
+
+    .header-title {
+        width: 30%;
+    }
+
+    .header-title__logo {
+        width: 100%;
+    }
+
+    .header-search {
+        width: 65%;
+    }
+
+    .header-search__input {
+        font-size: medium;
+        padding: 0.2rem 0.5rem;
+    }
+
+    .header-nav {
+        width: 100%;
+        margin-top: 1rem;
+    }
+}

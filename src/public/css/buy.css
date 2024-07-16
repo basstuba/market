@@ -137,7 +137,7 @@
 }
 
 .sell-price {
-    width: 40%;
+    width: 50%;
     margin-left: 2rem;
 }
 
@@ -156,4 +156,59 @@
 .form-item__error {
     color: #fd3b3b;
     text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+    .main-sell {
+        width: 40%;
+    }
+
+    .item-photo {
+        width: 25%;
+    }
+
+    .item-name {
+        margin-bottom: 1rem;
+    }
+
+    .sell-price {
+        width: 60%;
+        margin-left: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-sell {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .main {
+        flex-wrap: wrap;
+    }
+
+    .main-content {
+        width: 90%;
+        margin-bottom: 1rem;
+    }
+
+    .main-sell {
+        width: 90%;
+    }
+
+    .sell-price {
+        width: 60%;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .main-content {
+        width: 95%;
+    }
+
+    .main-sell {
+        width: 95%;
+    }
 }
