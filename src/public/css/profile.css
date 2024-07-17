@@ -92,3 +92,63 @@
 .form-item__error {
     color: #fd3b3b;
 }
+
+@media screen and (max-width: 1024px) {
+    .main-content {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-content {
+        width: 50%;
+    }
+
+    .user-photo {
+        margin-right: 2rem;
+    }
+
+    .photo-img {
+        width: 5rem;
+        height: 5rem;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .main-content {
+        width: 60%;
+        padding: 0;
+    }
+
+    .user-photo {
+        margin: 0 auto;
+    }
+
+    .upload {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .user-upload {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .upload-input {
+        width: 100%;
+        padding: 0 3.5rem;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .main-content {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .main-content {
+        width: 80%;
+    }
+}
+

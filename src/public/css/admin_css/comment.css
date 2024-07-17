@@ -59,3 +59,25 @@
     text-align: start;
     margin-bottom: 0.5rem;
 }
+
+@media screen and (max-width: 426px) {
+    .main-link {
+        padding-right: 1rem;
+    }
+
+    .main-content {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .main-content {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .main-content {
+        width: 90%;
+    }
+}

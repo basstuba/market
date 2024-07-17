@@ -21,3 +21,21 @@
     color: #e00000;
     text-align: center;
 }
+
+@media screen and (max-width: 426px) {
+    .stripe-content {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .stripe-content {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .stripe-content {
+        width: 95%;
+    }
+}

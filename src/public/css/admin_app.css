@@ -50,3 +50,34 @@
 .nav-link:visited {
     color: #ffbd39;
 }
+
+@media screen and (max-width: 426px) {
+    .header {
+        flex-wrap: wrap;
+    }
+
+    .header-title {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .header-title__logo {
+        font-size: larger;
+    }
+
+    .header-nav {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .header-title {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .header-title {
+        width: 90%;
+    }
+}

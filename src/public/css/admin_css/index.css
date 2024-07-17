@@ -17,3 +17,9 @@
 .main-item__link:visited {
     color: #ffa500;
 }
+
+@media screen and (max-width: 376px) {
+    .main-item__link {
+        font-size: x-large;
+    }
+}

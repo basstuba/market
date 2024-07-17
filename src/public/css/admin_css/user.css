@@ -94,3 +94,54 @@
     padding: 0.2rem 0.5rem;
     cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+    .search-input {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .search-input {
+        width: 50%;
+    }
+
+    .content-td {
+        padding: 0.2rem 0.2rem;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .search-input {
+        width: 60%;
+    }
+
+    .content-table {
+        margin: 1rem;
+    }
+
+    .content-th {
+        padding: 0.2rem 0;
+    }
+
+    .content-tr {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .content-td {
+        display: block;
+        width: 50%;
+    }
+
+    .modal-button__open,
+    .delete-form {
+        text-align: end;
+    }
+
+    .modal-item {
+        font-size: large;
+    }
+}

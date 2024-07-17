@@ -67,3 +67,33 @@
     padding: 0.3rem;
     cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+    .main-content {
+        width: 70%;
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .main-content {
+        width: 80%;
+        padding: 2rem 1rem;
+    }
+
+    .address-table {
+        width: 100%;
+    }
+
+    .address-th,
+    .address-td {
+        display: block;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .main-content {
+        width: 90%;
+    }
+}
