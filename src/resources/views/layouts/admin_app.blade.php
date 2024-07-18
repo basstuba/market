@@ -13,7 +13,7 @@
     <header class="header">
         <div class="header-title">
             <h1 class="header-title__logo">
-                <a class="header-title__link" href="{{ route('admin') }}">Management Screen</a>
+                <a class="header-title__link" href="{{ route('admin') }}">管理画面</a>
             </h1>
         </div>
         <nav class="header-nav">
