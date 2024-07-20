@@ -17,7 +17,7 @@ jobs:
       - run:
           name: Wait for MySQL to be ready
           command: |
-            for i in `seq 1 30`; do
+            for i in `seq 1 60`; do
               nc -z localhost 3306 && echo "MySQL is up" && break
               echo "Waiting for MySQL..."
               sleep 2
