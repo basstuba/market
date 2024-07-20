@@ -7,8 +7,9 @@ jobs:
       - image: circleci/mysql:8.0
         environment:
           MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: test_database
-          MYSQL_ALLOW_EMPTY_PASSWORD: true
+          MYSQL_DATABASE: market_test 
+
+    working_directory: ~/src
 
     steps:
       - checkout
@@ -23,29 +24,42 @@ jobs:
             done
 
       - run:
+          name: Move to src directory
+          command: cd src
+
+      - run:
           name: base64 decode env file
-          command: echo $ENV_TEST_FILE | base64 -di > .env.testing
+          command: echo $ENV_TEST_FILE | base64 -d > src/.env.testing
 
       - run:
           name: Update Composer to Version 2
           command: sudo composer self-update --2
 
+      - run:
+          name: Check for composer.json
+          command: |
+            if [ ! -f src/composer.json ]; then
+              echo "composer.json file not found in $(pwd)/src"
+              exit 1
+            fi
+
       - restore_cache:
-          key: composer-v2-{{ checksum "composer.lock" }}
+          key: composer-v2-{{ checksum "src/composer.lock" }}
 
       - run:
           name: Install Dependencies
-          command: composer install -n --prefer-dist
+          command: cd src && composer install -n --prefer-dist
 
       - save_cache:
-          key: composer-v2-{{ checksum "composer.lock" }}
+          key: composer-v2-{{ checksum "src/composer.lock" }}
           paths:
-            - vendor
+            - src/vendor
 
       - run:
           name: Run Migrations
-          command: php artisan migrate --env=testing
+          command: cd src && php artisan migrate --env=testing
 
       - run:
           name: Run Tests
-          command: php artisan test --env=testing
+          command: cd src && php artisan test --env=testing
+
