@@ -29,7 +29,7 @@ jobs:
 
       - run:
           name: base64 decode env file
-          command: echo $ENV_TEST_FILE | base64 -d > src/.env.testing
+          command: echo $ENV_TEST_FILE | base64 -di > src/.env.testing
 
       - run:
           name: Update Composer to Version 2
