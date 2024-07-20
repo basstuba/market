@@ -1,26 +1,43 @@
 version: 2.1
+
 jobs:
   build:
     docker:
       - image: circleci/php:7.4.9
       - image: circleci/mysql:8.0
+        environment:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: market_test
 
     working_directory: ~/src
 
     steps:
       - checkout
+
       - run:
           name: base64 decode env file
-            command: echo $ENV_TEST_FILE | base64 -di > .env.testing
-      - run: sudo composer self-update --1
+          command: echo $ENV_TEST_FILE | base64 -di > .env.testing
+
+      - run:
+          name: Update Composer
+          command: sudo composer self-update --1
+
       - restore_cache:
           key: composer-v1-{{ checksum "composer.lock" }}
-      - run: composer install -n --prefer-dist
+
+      - run:
+          name: Install Dependencies
+          command: composer install -n --prefer-dist
+
       - save_cache:
           key: composer-v1-{{ checksum "composer.lock" }}
           paths:
             - vendor
+
       - run:
-          command: php artisan migrate
+          name: Run Migrations
+          command: php artisan migrate --env=testing
+
       - run:
-          command: php artisan test
+          name: Run Tests
+          command: php artisan test --env=testing
