@@ -8,11 +8,21 @@ jobs:
         environment:
           MYSQL_ROOT_PASSWORD: root
           MYSQL_DATABASE: test_database
+          MYSQL_ALLOW_EMPTY_PASSWORD: true
 
     working_directory: ~/src
 
     steps:
       - checkout
+
+      - run:
+          name: Wait for MySQL to be ready
+          command: |
+            for i in `seq 1 30`; do
+              nc -z localhost 3306 && echo "MySQL is up" && break
+              echo "Waiting for MySQL..."
+              sleep 2
+            done
 
       - run:
           name: base64 decode env file
