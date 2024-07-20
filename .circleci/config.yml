@@ -3,18 +3,24 @@ jobs:
   build:
     docker:
       - image: circleci/php:7.4.9
-      - image: circleci/mysql:8.0.26
-
-    environment:
-      - APP_DEBUG: true
-      - APP_ENV: testing
-      - APP_KEY: base64:AKaEDIOPONtYxErF0RqDXTdyN3tsUJ9AXLXAApqX4eQ=
-      - DB_CONNECTION: mysql_test
-      - MYSQL_ALLOW_EMPTY_PASSWORD: true
+      - image: circleci/mysql:8.0
 
     working_directory: ~/src
 
     steps:
       - checkout
-      - run: php artisan migrate
-      - run: php artisan test
+      - run:
+          name: base64 decode env file
+            command: echo $ENV_TEST_FILE | base64 -di > .env.testing
+      - run: sudo composer self-update --1
+      - restore_cache:
+          key: composer-v1-{{ checksum "composer.lock" }}
+      - run: composer install -n --prefer-dist
+      - save_cache:
+          key: composer-v1-{{ checksum "composer.lock" }}
+          paths:
+            - vendor
+      - run:
+          command: php artisan migrate
+      - run:
+          command: php artisan test
