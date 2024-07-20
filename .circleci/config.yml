@@ -29,18 +29,18 @@ jobs:
           command: echo $ENV_TEST_FILE | base64 -di > .env.testing
 
       - run:
-          name: Update Composer
-          command: sudo composer self-update --1
+          name: Update Composer to Version 2
+          command: sudo composer self-update --2
 
       - restore_cache:
-          key: composer-v1-{{ checksum "composer.lock" }}
+          key: composer-v2-{{ checksum "composer.lock" }}
 
       - run:
           name: Install Dependencies
           command: composer install -n --prefer-dist
 
       - save_cache:
-          key: composer-v1-{{ checksum "composer.lock" }}
+          key: composer-v2-{{ checksum "composer.lock" }}
           paths:
             - vendor
 
