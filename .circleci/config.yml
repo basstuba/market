@@ -10,8 +10,6 @@ jobs:
           MYSQL_DATABASE: test_database
           MYSQL_ALLOW_EMPTY_PASSWORD: true
 
-    working_directory: ~/src/src
-
     steps:
       - checkout
 
