@@ -10,6 +10,8 @@ jobs:
           DB_HOST: mysql 
           MYSQL_ROOT_PASSWORD: root
           MYSQL_DATABASE: market_test
+          MYSQL_ROOT_HOST: root
+          MYSQL_ALLOW_EMPTY_PASSWORD: true
 
     working_directory: ~/src
 
