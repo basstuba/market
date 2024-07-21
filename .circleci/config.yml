@@ -10,6 +10,16 @@ jobs:
           MYSQL_DATABASE: market_test
           MYSQL_ROOT_HOST: root
           MYSQL_ALLOW_EMPTY_PASSWORD: true
+          APP_ENV: testing
+          APP_KEY: base64:AKaEDIOPONtYxErF0RqDXTdyN3tsUJ9AXLXAApqX4eQ=
+          APP_DEBUG: true
+          APP_URL: http://localhost
+          DB_CONNECTION: mysql
+          DB_HOST: mysql
+          DB_PORT: 3306
+          DB_DATABASE: market_test
+          DB_USERNAME: root
+          DB_PASSWORD: root
 
     working_directory: ~/src
 
@@ -28,10 +38,6 @@ jobs:
       - run:
           name: Move to src directory
           command: cd src
-
-      - run:
-          name: base64 decode env file
-          command: echo $ENV_TEST_FILE | base64 -di > src/.env.testing
 
       - run:
           name: Update Composer to Version 2
