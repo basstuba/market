@@ -5,14 +5,13 @@ jobs:
     docker:
       - image: cimg/php:7.4.30
       - image: cimg/mysql:8.0
-        environment: 
+        environment:
           MYSQL_ROOT_PASSWORD: root
           MYSQL_DATABASE: market_test
           MYSQL_ALLOW_EMPTY_PASSWORD: true
 
     environment:
       APP_ENV: testing
-      APP_KEY: base64:AKaEDIOPONtYxErF0RqDXTdyN3tsUJ9AXLXAApqX4eQ=
       APP_DEBUG: true
       APP_URL: http://localhost
       DB_CONNECTION: mysql_test
