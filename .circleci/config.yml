@@ -12,6 +12,7 @@ jobs:
 
     environment:
       APP_ENV: testing
+      APP_KEY: base64:AKaEDIOPONtYxErF0RqDXTdyN3tsUJ9AXLXAApqX4eQ=
       APP_DEBUG: true
       APP_URL: http://localhost
       DB_CONNECTION: mysql_test
@@ -62,10 +63,6 @@ jobs:
           key: composer-v2-{{ checksum "src/composer.lock" }}
           paths:
             - src/vendor
-      
-      - run:
-          name: Generate Application Key
-          command: cd src && php artisan key:generate --force
 
       - run:
           name: Clear and Cache Config
