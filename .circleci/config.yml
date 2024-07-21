@@ -6,8 +6,6 @@ jobs:
       - image: cimg/php:7.4.30
       - image: cimg/mysql:8.0
         environment:
-          DB_CONNECTION: mysql_test
-          DB_HOST: 127.0.0.1
           MYSQL_ROOT_PASSWORD: root
           MYSQL_DATABASE: market_test
 
