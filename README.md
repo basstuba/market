@@ -262,6 +262,8 @@ PHPコンテナにログインした状態で
 
 php artisan config:clear
 
+でキャッシュクリアを実行してから
+
 php artisan migrate --env=testing
 
 又は
