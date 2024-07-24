@@ -75,4 +75,29 @@ jobs:
           name: Run Tests
           command: cd src && php artisan test --env=testing
 
+  deploy:
+    machine:
+        enabled: true
 
+    steps:
+      - checkout
+
+      - add_ssh_keys:
+          fingerprints:
+            - "${KEY_FINGERPRINT}"
+
+      - run: ssh ${USER_NAME}@${HOST_NAME} 'cd ~/laravel/market && git pull origin main'
+
+workflows:
+  version: 2
+  build_and_deploy:
+
+      jobs:
+        - build
+
+        - deploy:
+            requires:
+              - build
+            filters:
+              branches:
+                only: main
