@@ -16,7 +16,7 @@ http://localhost
 
 ### AWS を使用した本番環境
 
-http://IP アドレス
+http://52.194.235.137
 
 ## 機能一覧
 
@@ -142,9 +142,9 @@ MAIL_FROM_NAME="${APP_NAME}"
 
 **.envファイルの最後に追加**
 
-STRIPE_KEY=stripeで取得した公開キー
+STRIPE_KEY=pk_test_51PXLD8RpNmkMJF98BJ6A7RFg3blZCx4MO5saOR39gJJLW1MO8LDQBOdpDHbb0HcRoqz5uEr4Xhelc25cgdyqzIXK001BE3mHgc
 
-STRIPE_SECRET=stripeで取得したシークレットキー
+STRIPE_SECRET=sk_test_51PXLD8RpNmkMJF98JUVBR1gi1CxZOolYQT7bzXtpUD0jFAC1C3LHY1U5fkf9FB4hYFjYSneAWsxBIJmVKBUh3MZo00Ez8SOUiN
 
 ### 5 テーブルの作成
 
@@ -288,7 +288,7 @@ http://localhost:8025
 
 #### AWSを使用した本番環境
 
-http://IPアドレス:8025
+http://52.194.235.137:8025
 
 ### 2 データベースのテーブルを確認できるphpMyAdminのURLは下記の通りです。
 
@@ -298,7 +298,7 @@ http://localhost:8080
 
 #### AWSを使用した本番環境
 
-http://IPアドレス:8080
+http://52.194.235.137:8080
 
 ### 3 docker-compose.ymlの設定はlocalhostでの接続設定になっています。
 
