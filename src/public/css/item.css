@@ -161,6 +161,10 @@
         margin-left: 1rem;
     }
 
+    .link-buy__button {
+        margin: 1rem auto;
+    }
+
     .information-th {
         padding-right: 1rem;
     }
