@@ -16,7 +16,7 @@ http://localhost
 
 ### AWS を使用した本番環境
 
-http://52.194.235.137
+http://IPアドレス
 
 ## 機能一覧
 
@@ -144,15 +144,7 @@ MAIL_FROM_NAME="${APP_NAME}"
 
 STRIPE_KEY=stripeで取得した公開可能キー
 
-**（今回は模擬案件ですので案件に使用しているテスト用キーを記述します。）**
-
-STRIPE_KEY=pk_test_51PXLD8RpNmkMJF98BJ6A7RFg3blZCx4MO5saOR39gJJLW1MO8LDQBOdpDHbb0HcRoqz5uEr4Xhelc25cgdyqzIXK001BE3mHgc
-
 STRIPE_SECRET=stripeで取得したシークレットキー
-
-**（今回は模擬案件ですので案件に使用しているテスト用キーを記述します。）**
-
-STRIPE_SECRET=sk_test_51PXLD8RpNmkMJF98JUVBR1gi1CxZOolYQT7bzXtpUD0jFAC1C3LHY1U5fkf9FB4hYFjYSneAWsxBIJmVKBUh3MZo00Ez8SOUiN
 
 ### 5 テーブルの作成
 
@@ -312,7 +304,7 @@ http://localhost:8025
 
 #### AWSを使用した本番環境
 
-http://52.194.235.137:8025
+http://IPアドレス:8025
 
 ### 2 データベースのテーブルを確認できるphpMyAdminのURLは下記の通りです。
 
@@ -322,11 +314,11 @@ http://localhost:8080
 
 #### AWSを使用した本番環境
 
-http://52.194.235.137:8080
+http://IPアドレス:8080
 
 ### 3 docker-compose.ymlの設定はlocalhostでの接続設定になっています。
 
-### 4 AWSの環境の確認はIAMユーザーを選択して”アカウントID「471112662470」",”ユーザーネーム「User-teat@account」” ,”パスワード「G-user/4202」”でログインしてください。
+### 4 AWSの環境の確認はIAMユーザーを選択して”アカウントID",”ユーザーネーム” ,”パスワード”でログインしてください。
 
 ・リージョンは東京を選択すれば確認できます。
 
